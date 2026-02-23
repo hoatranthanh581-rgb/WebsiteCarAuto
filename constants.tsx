@@ -19,6 +19,18 @@ export const MEMBERS: Member[] = [
     role: "Nghiên cứu Lịch sử Detroit",
     image: "https://images.unsplash.com/photo-1455165814004-1126a7199f9b?auto=format&fit=crop&q=80&w=600",
     description: "Chuyên gia nghiên cứu về sự hình thành Big Three, thời kỳ Rust Belt và các mốc lịch sử Detroit."
+  },
+  {
+    name: "Kiến Minh",
+    role: "Phân tích Dữ liệu EV",
+    image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=600",
+    description: "Phụ trách thu thập và xử lý tập dữ liệu về sản lượng xe điện toàn cầu và các mô hình dự báo tăng trưởng."
+  },
+  {
+    name: "Khánh Linh",
+    role: "Chuyên gia Chuỗi cung ứng",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=600",
+    description: "Nghiên cứu sự dịch chuyển logistics từ Rust Belt xuống Sun Belt và chuỗi giá trị pin lithium-ion."
   }
 ];
 
@@ -29,7 +41,7 @@ export const EV_GROWTH_DATA: ChartDataPoint[] = [
   { year: '2021', ice: 75, ev: 8.3 },
   { year: '2022', ice: 70, ev: 13.0 },
   { year: '2023', ice: 64, ev: 18.2 },
-  { year: '2024 (Dự báo)', ice: 58, ev: 24.5 }
+  { year: '2024', ice: 58, ev: 24.5 }
 ];
 
 export const GLOBAL_EV_SHARE = [
