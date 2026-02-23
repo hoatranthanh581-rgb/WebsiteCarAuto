@@ -20,7 +20,7 @@ const Analysis: React.FC = () => {
   const topics = [
     { title: "Sự suy tàn của Detroit", prompt: "Sự suy tàn của Detroit và khái niệm Rust Belt (Vành đai Rỉ sét)" },
     { title: "Kinh tế quy mô Fordism", prompt: "Tác động của dây chuyền lắp ráp Ford đến kinh tế thế giới" },
-    { title: "Sự trỗi dậy của Tesla", prompt: "Cách Tesla thay đổi cuộc chơi và sự dịch chuyển nhà máy xuống miền Nam" },
+    { title: "Sự trỗi dậy của Tesla", prompt: "Cách Tesla thay đổi cuộc chơi và sự dịch chuyển nhà máy xuống miền Nam Hoa Kỳ" },
     { title: "Tương lai Pin & EV", prompt: "Phân tích địa chính trị về chuỗi cung ứng Pin xe điện" }
   ];
 
@@ -47,12 +47,12 @@ const Analysis: React.FC = () => {
             {loading ? (
               <div className="flex flex-col items-center justify-center py-32 space-y-4">
                 <div className="w-12 h-12 border-4 border-sky-500 border-t-transparent rounded-full animate-spin"></div>
-                <p className="text-gray-500 font-modern">ĐANG PHÂN TÍCH DỮ LIỆU...</p>
+                <p className="text-gray-500 font-modern text-sm">ĐANG PHÂN TÍCH DỮ LIỆU BẰNG GEMINI AI...</p>
               </div>
             ) : (
               <>
                 <h1 className="text-3xl font-bold text-white mb-8 leading-tight">{topic}</h1>
-                <div className="prose prose-invert max-w-none mb-10 text-gray-300 whitespace-pre-line">{result?.text}</div>
+                <div className="prose prose-invert max-w-none mb-10 text-gray-300 whitespace-pre-line leading-relaxed">{result?.text}</div>
                 {result?.sources && result.sources.length > 0 && (
                   <div className="mt-16 pt-8 border-t border-slate-800">
                     <h4 className="text-sky-400 font-bold mb-4 uppercase text-xs tracking-widest">Nguồn tham khảo:</h4>
