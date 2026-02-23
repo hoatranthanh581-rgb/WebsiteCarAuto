@@ -93,33 +93,10 @@ const Navbar = () => {
 
 const Footer = () => (
   <footer className="bg-slate-950 border-t border-slate-900 py-16">
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="grid md:grid-cols-3 gap-12 mb-12">
-        <div>
-          <h4 className="text-white font-modern font-bold mb-4 uppercase tracking-widest text-sm">Về Dự Án</h4>
-          <p className="text-gray-500 text-sm leading-relaxed">
-            Nghiên cứu khoa học về sự chuyển dịch cơ cấu công nghiệp ô tô Hoa Kỳ từ thế kỷ 20 sang kỷ nguyên di động điện hóa.
-          </p>
-        </div>
-        <div>
-          <h4 className="text-white font-modern font-bold mb-4 uppercase tracking-widest text-sm">Truy Cập Nhanh</h4>
-          <ul className="text-gray-500 text-sm space-y-2">
-            <li><Link to="/data" className="hover:text-sky-400">Dữ liệu tăng trưởng</Link></li>
-            <li><Link to="/analysis" className="hover:text-sky-400">Phân tích chuyên sâu</Link></li>
-            <li><Link to="/map" className="hover:text-sky-400">Bản đồ công nghiệp</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-white font-modern font-bold mb-4 uppercase tracking-widest text-sm">Liên Hệ</h4>
-          <p className="text-gray-500 text-sm">Email: contact@automotive-report.edu.vn</p>
-          <p className="text-gray-500 text-sm">Phòng Lab Kinh tế Công nghiệp - Đại học Quốc gia</p>
-        </div>
-      </div>
-      <div className="pt-8 border-t border-slate-900 text-center">
-        <p className="text-gray-600 text-xs">
-          © 2024 Dự án Nghiên cứu Khoa học. Tất cả các quyền được bảo lưu.
-        </p>
-      </div>
+    <div className="max-w-7xl mx-auto px-4 text-center">
+      <p className="text-gray-600 text-xs">
+        © 2024 Dự án Nghiên cứu Khoa học Công nghiệp Ô tô.
+      </p>
     </div>
   </footer>
 );
