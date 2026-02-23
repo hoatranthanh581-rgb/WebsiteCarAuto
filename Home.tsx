@@ -1,10 +1,13 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <div className="animate-fadeIn">
+      {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
@@ -36,11 +39,14 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Industrial Timeline */}
       <section className="py-32 bg-slate-950 border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold font-modern mb-20 text-center">Tiến trình <span className="text-sky-500">Phát triển Công nghiệp</span></h2>
+          
           <div className="relative space-y-12">
             <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-slate-800 hidden md:block"></div>
+            
             {[
               { year: '1908', title: 'Kỷ nguyên Fordism', desc: 'Henry Ford ra mắt Model T, thiết lập dây chuyền lắp ráp di động đầu tiên tại Highland Park, Michigan.' },
               { year: '1950s', title: 'Thời hoàng kim Detroit', desc: 'Thành phố Detroit trở thành trung tâm công nghiệp lớn nhất thế giới với sự thống trị của "Big Three".' },
@@ -64,6 +70,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Video Introduction Section */}
       <section className="py-24 bg-slate-900 overflow-hidden border-y border-slate-800">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -72,17 +79,48 @@ const Home: React.FC = () => {
               <p className="text-gray-400 mb-8 text-lg leading-relaxed">
                 Đoạn phim ngắn tổng hợp quá trình chuyển đổi của ngành công nghiệp ô tô Hoa Kỳ từ những thước phim đen trắng của Ford đến công nghệ AI tự hành ngày nay.
               </p>
+              <div className="flex items-center space-x-6">
+                <div className="flex -space-x-3">
+                  <div className="w-10 h-10 rounded-full border-2 border-slate-900 bg-sky-600 flex items-center justify-center text-[10px] font-bold">TH</div>
+                  <div className="w-10 h-10 rounded-full border-2 border-slate-900 bg-emerald-600 flex items-center justify-center text-[10px] font-bold">DM</div>
+                  <div className="w-10 h-10 rounded-full border-2 border-slate-900 bg-amber-600 flex items-center justify-center text-[10px] font-bold">SA</div>
+                </div>
+                <span className="text-gray-500 text-sm font-medium italic">Thực hiện bởi nhóm nghiên cứu AUTO-REVOLUTION</span>
+              </div>
             </div>
             <div className="lg:w-1/2 w-full">
-              <div className="relative aspect-video rounded-3xl overflow-hidden group border border-slate-700 shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=1200" alt="EV Charging" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-                <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                  <button className="w-20 h-20 bg-sky-500 hover:bg-sky-400 text-white rounded-full flex items-center justify-center transition-all transform hover:scale-110 shadow-2xl">
-                    <svg className="w-10 h-10 fill-current ml-1" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </button>
-                </div>
+              <div className="relative aspect-video rounded-3xl overflow-hidden group border border-slate-700 shadow-2xl bg-black">
+                {!isPlaying ? (
+                  <>
+                    <img 
+                      src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=1200" 
+                      alt="EV Charging" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-60" 
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <button 
+                        onClick={() => setIsPlaying(true)}
+                        className="w-20 h-20 bg-sky-500 hover:bg-sky-400 text-white rounded-full flex items-center justify-center transition-all transform hover:scale-110 shadow-2xl z-20 group-hover:ring-4 ring-sky-500/30"
+                      >
+                        <svg className="w-10 h-10 fill-current ml-1" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div className="absolute bottom-6 left-6 text-white font-modern text-xs bg-black/40 px-3 py-1 rounded-full backdrop-blur-md">
+                      NHẤN ĐỂ PHÁT VIDEO GIỚI THIỆU
+                    </div>
+                  </>
+                ) : (
+                  <iframe 
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/S2p6i1P5I-A?autoplay=1" 
+                    title="History of the Automotive Industry" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen
+                  ></iframe>
+                )}
               </div>
             </div>
           </div>
