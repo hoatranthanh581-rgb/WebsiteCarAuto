@@ -7,14 +7,15 @@ const Analysis: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [topic, setTopic] = useState<string>("Sự suy tàn của Detroit và khái niệm Rust Belt");
 
+  const fetchInsight = async (selectedTopic: string) => {
+    setLoading(true);
+    const data = await getAutomotiveInsights(selectedTopic);
+    setResult(data);
+    setLoading(false);
+  };
+
   useEffect(() => {
-    const fetchInsight = async () => {
-      setLoading(true);
-      const data = await getAutomotiveInsights(topic);
-      setResult(data);
-      setLoading(false);
-    };
-    fetchInsight();
+    fetchInsight(topic);
   }, [topic]);
 
   const topics = [
@@ -33,7 +34,8 @@ const Analysis: React.FC = () => {
             <div className="space-y-3">
               {topics.map((item, idx) => (
                 <button 
-                  key={idx} onClick={() => setTopic(item.prompt)}
+                  key={idx} 
+                  onClick={() => setTopic(item.prompt)}
                   className={`w-full text-left p-5 rounded-2xl transition-all border ${topic === item.prompt ? 'bg-sky-600 border-sky-400 text-white shadow-lg' : 'bg-slate-900 border-slate-800 text-gray-400 hover:border-slate-700'}`}
                 >
                   <div className="font-bold">{item.title}</div>
@@ -42,8 +44,9 @@ const Analysis: React.FC = () => {
             </div>
           </div>
         </aside>
+        
         <div className="lg:w-2/3">
-          <div className="bg-slate-900/40 rounded-3xl p-8 md:p-12 border border-slate-800 shadow-2xl">
+          <div className="bg-slate-900/40 rounded-3xl p-8 md:p-12 border border-slate-800 shadow-2xl min-h-[500px]">
             {loading ? (
               <div className="flex flex-col items-center justify-center py-32 space-y-4">
                 <div className="w-12 h-12 border-4 border-sky-500 border-t-transparent rounded-full animate-spin"></div>
@@ -52,10 +55,24 @@ const Analysis: React.FC = () => {
             ) : (
               <>
                 <h1 className="text-3xl font-bold text-white mb-8 leading-tight">{topic}</h1>
-                <div className="prose prose-invert max-w-none mb-10 text-gray-300 whitespace-pre-line leading-relaxed">{result?.text}</div>
+                <div className="prose prose-invert max-w-none mb-10">
+                  <div className={`text-gray-300 whitespace-pre-line leading-relaxed ${result?.text.startsWith('Lỗi') ? 'text-red-400' : ''}`}>
+                    {result?.text}
+                  </div>
+                </div>
+
+                {result?.text.startsWith('Lỗi') && (
+                  <button 
+                    onClick={() => fetchInsight(topic)}
+                    className="mt-4 px-6 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors border border-slate-700"
+                  >
+                    Thử lại
+                  </button>
+                )}
+
                 {result?.sources && result.sources.length > 0 && (
                   <div className="mt-16 pt-8 border-t border-slate-800">
-                    <h4 className="text-sky-400 font-bold mb-4 uppercase text-xs tracking-widest">Nguồn tham khảo:</h4>
+                    <h4 className="text-sky-400 font-bold mb-4 uppercase text-xs tracking-widest">Nguồn tham khảo tin cậy:</h4>
                     <div className="grid sm:grid-cols-2 gap-3">
                       {result.sources.map((source, i) => (
                         <a key={i} href={source.uri} target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-950 rounded-lg border border-slate-800 hover:border-sky-500 transition-colors block truncate text-xs text-gray-400 hover:text-white">
