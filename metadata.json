@@ -1,0 +1,8 @@
+
+{
+  "name": "Automotive: From Detroit to Electric",
+  "description": "A comprehensive analysis of the automotive industry evolution, from the historic Big Three in Detroit to the modern EV revolution and the Rust Belt transition.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
