@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react';
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import Home from './pages/Home.tsx';
-import DataCharts from './pages/DataCharts.tsx';
-import Analysis from './pages/Analysis.tsx';
-import IndustrialMap from './pages/IndustrialMap.tsx';
-import Members from './pages/Members.tsx';
+import Home from './Home';
+import DataCharts from './DataCharts';
+import Analysis from './Analysis';
+import IndustrialMap from './IndustrialMap';
+import Members from './Members';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,7 +69,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-slate-900 border-b border-slate-800 animate-slideDown">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -144,4 +143,3 @@ export default function App() {
     </HashRouter>
   );
 }
-

@@ -4,14 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
     <title>Công nghiệp Ô tô - Từ Detroit đến Kỷ nguyên Điện</title>
+    <meta name="title" content="Công nghiệp Ô tô - Từ Detroit đến Kỷ nguyên Điện">
+    <meta name="description" content="Báo cáo khoa học về lịch sử công nghiệp ô tô Detroit, sự dịch chuyển Rust Belt và kỷ nguyên xe điện Tesla.">
+    <meta name="keywords" content="Ô tô, Xe điện, Detroit, Tesla, Ford, Công nghiệp, Rust Belt, EV Revolution">
+    <meta name="author" content="Thanh Hòa, Duy Mạnh, Song An">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://automotive-revolution.edu.vn/">
+    <meta property="og:title" content="Công nghiệp Ô tô - Từ Detroit đến Kỷ nguyên Điện">
+    <meta property="og:description" content="Phân tích khoa học và số liệu về sự chuyển mình của ngành ô tô toàn cầu.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&q=80&w=1200">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Công nghiệp Ô tô - Từ Detroit đến Kỷ nguyên Điện">
+    <meta property="twitter:description" content="Phân tích khoa học và số liệu về sự chuyển mình của ngành ô tô toàn cầu.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&q=80&w=1200">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0f172a;
             color: #f8fafc;
+            scroll-behavior: smooth;
         }
         .font-modern {
             font-family: 'Orbitron', sans-serif;
@@ -19,22 +41,34 @@
         .industrial-gradient {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
         }
-        .accent-glow {
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+        /* Custom scrollbar for professional look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9;
         }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
-    "recharts": "https://esm.sh/recharts@^3.7.0",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
-  }
-}
-</script>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+        "recharts": "https://esm.sh/recharts@^3.7.0",
+        "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
+      }
+    }
+    </script>
 <link rel="stylesheet" href="/index.css">
 </head>
 <body>
