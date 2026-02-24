@@ -21,30 +21,23 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-lg border-b border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18">
-          <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center space-x-2">
-              <div className="w-10 h-10 bg-sky-500 rounded-lg flex items-center justify-center font-modern font-bold text-white shadow-[0_0_15px_rgba(14,165,233,0.5)]">A</div>
-              <div className="flex flex-col">
-                <span className="text-white font-modern text-lg font-bold leading-tight">AUTOMOTIVE</span>
-                <span className="text-sky-400 text-[10px] tracking-[0.2em] font-bold">REVOLUTION</span>
-              </div>
-            </Link>
-          </div>
+    <nav className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 w-full">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-sky-500 rounded flex items-center justify-center font-modern font-bold text-white text-sm shadow-lg shadow-sky-500/20">A</div>
+            <span className="text-white font-modern text-sm font-bold tracking-tighter hidden sm:block uppercase">Automotive</span>
+          </Link>
           
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-6">
+          <div className="hidden lg:block">
+            <div className="flex space-x-4">
               {links.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   className={`${
-                    isActive(link.path)
-                      ? 'text-sky-400 border-b-2 border-sky-400'
-                      : 'text-gray-400 hover:text-white'
-                  } px-1 py-4 text-sm font-semibold transition-all duration-300`}
+                    isActive(link.path) ? 'text-sky-400 border-b-2 border-sky-400' : 'text-gray-400 hover:text-white'
+                  } px-2 py-1 text-xs font-bold transition-all uppercase tracking-widest`}
                 >
                   {link.name}
                 </Link>
@@ -52,17 +45,10 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="md:hidden">
-            <button 
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-400 hover:text-white p-2 transition-colors"
-            >
+          <div className="lg:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-400 p-2">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-                )}
+                {isOpen ? <path d="M6 18L18 6M6 6l12 12" /> : <path d="M4 6h16M4 12h16m-7 6h7" />}
               </svg>
             </button>
           </div>
@@ -70,16 +56,16 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-slate-900 border-b border-slate-800">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="lg:hidden bg-slate-900 border-b border-slate-800 animate-fadeIn">
+          <div className="px-4 py-4 space-y-2">
             {links.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={`${
-                  isActive(link.path) ? 'bg-sky-600 text-white' : 'text-gray-300 hover:bg-slate-800'
-                } block px-3 py-2 rounded-md text-base font-medium`}
+                  isActive(link.path) ? 'bg-sky-600 text-white' : 'text-gray-300'
+                } block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-widest`}
               >
                 {link.name}
               </Link>
@@ -91,22 +77,12 @@ const Navbar = () => {
   );
 };
 
-const Footer = () => (
-  <footer className="bg-slate-950 border-t border-slate-900 py-16">
-    <div className="max-w-7xl mx-auto px-4 text-center">
-      <p className="text-gray-600 text-xs">
-        © 2024 Dự án Nghiên cứu Khoa học Công nghiệp Ô tô.
-      </p>
-    </div>
-  </footer>
-);
-
 export default function App() {
   return (
     <HashRouter>
-      <div className="min-h-screen flex flex-col bg-slate-950">
+      <div className="flex flex-col w-full min-h-screen">
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow w-full">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/data" element={<DataCharts />} />
@@ -115,7 +91,11 @@ export default function App() {
             <Route path="/members" element={<Members />} />
           </Routes>
         </main>
-        <Footer />
+        <footer className="bg-slate-950 border-t border-slate-900 py-10 w-full">
+          <div className="text-center text-gray-600 text-[10px] uppercase tracking-[0.3em]">
+            © 2024 Dự án Nghiên cứu Khoa học Ô tô
+          </div>
+        </footer>
       </div>
     </HashRouter>
   );
