@@ -1,59 +1,45 @@
 
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" style="height: 100%; overflow-x: hidden;">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- Primary Meta Tags -->
-    <title>Công nghiệp Ô tô - Từ Detroit đến Kỷ nguyên Điện</title>
-    <meta name="title" content="Công nghiệp Ô tô - Từ Detroit đến Kỷ nguyên Điện">
-    <meta name="description" content="Báo cáo khoa học về lịch sử công nghiệp ô tô Detroit, sự dịch chuyển Rust Belt và kỷ nguyên xe điện Tesla.">
-    <meta name="keywords" content="Ô tô, Xe điện, Detroit, Tesla, Ford, Công nghiệp, Rust Belt, EV Revolution">
-    <meta name="author" content="Thanh Hòa, Duy Mạnh, Song An">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://automotive-revolution.edu.vn/">
-    <meta property="og:title" content="Công nghiệp Ô tô - Từ Detroit đến Kỷ nguyên Điện">
-    <meta property="og:description" content="Phân tích khoa học và số liệu về sự chuyển mình của ngành ô tô toàn cầu.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&q=80&w=1200">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Công nghiệp Ô tô - Từ Detroit đến Kỷ nguyên Điện">
-    <meta property="twitter:description" content="Phân tích khoa học và số liệu về sự chuyển mình của ngành ô tô toàn cầu.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&q=80&w=1200">
-
+    <title>Công nghiệp Ô tô - Detroit to Electric</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
+        * { box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0f172a;
             color: #f8fafc;
-            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        #root {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .font-modern {
             font-family: 'Orbitron', sans-serif;
         }
-        .industrial-gradient {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        /* Tối ưu cho Google Sites Iframe */
+        iframe {
+            max-width: 100%;
         }
-        /* Custom scrollbar for professional look */
+        /* Loại bỏ scrollbar ngang khó chịu */
         ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
+            width: 6px;
         }
         ::-webkit-scrollbar-thumb {
             background: #1e293b;
             border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #0ea5e9;
         }
     </style>
 
@@ -69,10 +55,8 @@
       }
     }
     </script>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div id="root"></div>
-<script type="module" src="/index.tsx"></script>
 </body>
 </html>
