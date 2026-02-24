@@ -75,9 +75,9 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
-              <h3 className="text-4xl font-bold mb-8 font-modern leading-tight">Video giới thiệu <br/><span className="text-sky-500">Tầm nhìn Dự án</span></h3>
+              <h3 className="text-4xl font-bold mb-8 font-modern leading-tight">Video tư liệu <br/><span className="text-sky-500">Sự suy tàn của Detroit</span></h3>
               <p className="text-gray-400 mb-8 text-lg leading-relaxed">
-                Đoạn phim ngắn tổng hợp quá trình chuyển đổi của ngành công nghiệp ô tô Hoa Kỳ từ những thước phim đen trắng của Ford đến công nghệ AI tự hành ngày nay.
+                Khám phá lý do tại sao "Thành phố Động cơ" từng là biểu tượng kinh tế của thế giới lại rơi vào khủng hoảng và bài học cho kỷ nguyên xe điện mới.
               </p>
               <div className="flex items-center space-x-6">
                 <div className="flex -space-x-3">
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
                   <div className="w-10 h-10 rounded-full border-2 border-slate-900 bg-emerald-600 flex items-center justify-center text-[10px] font-bold">DM</div>
                   <div className="w-10 h-10 rounded-full border-2 border-slate-900 bg-amber-600 flex items-center justify-center text-[10px] font-bold">SA</div>
                 </div>
-                <span className="text-gray-500 text-sm font-medium italic">Thực hiện bởi nhóm nghiên cứu AUTO-REVOLUTION</span>
+                <span className="text-gray-500 text-sm font-medium italic">Nguồn tư liệu: Bloomberg Quicktake / Nhóm nghiên cứu</span>
               </div>
             </div>
             <div className="lg:w-1/2 w-full">
@@ -107,15 +107,15 @@ const Home: React.FC = () => {
                         </svg>
                       </button>
                     </div>
-                    <div className="absolute bottom-6 left-6 text-white font-modern text-xs bg-black/40 px-3 py-1 rounded-full backdrop-blur-md">
-                      NHẤN ĐỂ PHÁT VIDEO GIỚI THIỆU
+                    <div className="absolute bottom-6 left-6 text-white font-modern text-[10px] tracking-widest bg-black/60 px-4 py-2 rounded-full backdrop-blur-md border border-white/10">
+                      XEM VIDEO TƯ LIỆU THỰC TẾ
                     </div>
                   </>
                 ) : (
                   <iframe 
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/S2p6i1P5I-A?autoplay=1" 
-                    title="History of the Automotive Industry" 
+                    src="https://www.youtube.com/embed/l5V_5B9i0lE?autoplay=1" 
+                    title="Why Detroit Declined" 
                     frameBorder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowFullScreen
